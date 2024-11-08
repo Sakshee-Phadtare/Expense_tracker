@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="user-info">
+            <img src="img/logo.jpg" alt="User">
+            <span>Welcome User</span>
+        </div>
+        <div class="navbar-title">Personal Expense Tracker</div>
+        <button onclick="openModal()">Add Expense</button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Chart Card -->
+        <div class="card card-left">
+            <canvas id="expenseChart"></canvas>
+            <canvas id="monthlyExpenseChart" style="margin-top: 20px;"></canvas>
+        </div>
+
+        <!-- Expense List Card -->
+        <div class="card card-right">
+            <div class="expense-list-header">
+                <span>Expense Name</span>
+                <span>Amount</span>
+                <span>Category</span>
+                <span>Date</span>
+                <span>Action</span>
+            </div>
+            <div class="expense-list-content" id="expense-list"></div>
+
+            <!-- Total Expense & Filter -->
+            <div class="total-expense-container">
+                <div class="total-expense" id="total-expense">Total: $0.00</div>
+                <div class="filter-container">
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter" onchange="filterExpenses()">
+                        <option value="All">All</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding/Editing Expense -->
+    <div class="modal" id="expense-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Add Expense</h2>
+            <input type="text" id="description" placeholder="Expense Description">
+            <input type="number" id="amount" placeholder="Amount" min="0" max="100000">
+            <input type="date" id="date" min="2023-11-30" max="2025-11-30"/>
+            <select id="category">
+                <option value="" disabled selected>Select Category</option> 
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+            </select>
+            <button onclick="saveExpense()" id="submit_btn">Save Expense</button>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</div>

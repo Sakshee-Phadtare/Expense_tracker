@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.navbar button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #003d80;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 80px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-left {
+    flex: 0.4;
+    max-height: 100%;
+}
+
+.card-right {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 60%
+}
+
+.expense-list-header,
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.expense-item {
+    font-weight: normal;
+    align-items: center;
+}
+
+.expense-list-content {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.expense-item span,
+.expense-list-header span {
+    flex: 1;
+    text-align: left;
+}
+
+.total-expense-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.total-expense {
+    font-size: 1.2em;
+}
+
+.filter-container select {
+    padding: 5px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 450px;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.6em;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content button {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.user-info span{
+    position: absolute;;
+    padding-top: 12px;
+}
+
+/* .fa-trash:before {
+    color: #007bff;
+} */
+
+.modal-content button {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #007bff ;
+    color: white;
+}
+
+
+
+.fa-edit:before{
+    padding-right: 20px;
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    color: black;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(199, 198, 198);
+}
+
+.expense-name:hover{
+overflow-x: scroll;
+text-overflow: inherit;
+}
+
+.expense-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20%;
+}
+
+.expense-item > span{
+    height: 1.4rem;
+    max-width: 20%;
+    display: block;
+}
